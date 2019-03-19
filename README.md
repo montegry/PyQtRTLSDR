@@ -22,11 +22,12 @@ PyWinRTLSDR is a simple PyQt interface that shows matplotlib plot in real time w
     PyQt
     
 <h2>How it works</h2>
-1. Install Python or download package below
-2. Install pyrtlsdr
-3. Add librtlsdr.dll to a project folder
-4. Run server.py
-5. Run spectrum.py
+
+1. Install Python or download package below<br>
+2. Install pyrtlsdr<br>
+3. Add librtlsdr.dll to a project folder<br>
+4. Run server.py<br>
+5. Run spectrum.py<br><br>
 
 <h2>Good instruction how to make librtlsdr on windows </h2>
 https://www.onetransistor.eu/2017/03/compile-librtlsdr-windows-mingw.html
