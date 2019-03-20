@@ -48,16 +48,16 @@ class QtMplPanel(FigureCanvas):
         if self.data_queue.not_empty:
             get_samples = self.data_queue.get()
 
-            self.power, _, _ = specgram(list(get_samples), mode='magnitude')
-            self.magnitude, _, _ = specgram(list(get_samples), mode='psd')
-            self.phase, _, _ = specgram(list(get_samples), mode='phase')
+            self.power, power_len, _ = specgram(list(get_samples), mode='magnitude')
+            self.magnitude, magnitude_len, _ = specgram(list(get_samples), mode='psd')
+            self.phase, phase_len, _ = specgram(list(get_samples), mode='phase')
 
             self.axe1.clear()
             self.axe2.clear()
             self.axe3.clear()
-            self.axe1.plot(range(len(self.magnitude[0])), self.magnitude[0])
-            self.axe2.plot(range(len(self.power[0])), self.power[0])
-            self.axe3.plot(range(len(self.phase[0])), self.phase[0])
+            self.axe1.plot(power_len, self.magnitude[:, 0])
+            self.axe2.plot(magnitude_len, self.power[:, 0])
+            self.axe3.plot(phase_len, self.phase[:, 0])
             self.fig.canvas.draw()
 
 
